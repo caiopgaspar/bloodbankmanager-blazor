@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\Migrations\\20240904235446_initialapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BloodBankManager\\Data\\Migrations\\20240904235446_initialapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EACF44BE-A301-4001-849F-C7D8A563ACFD}|BloodBankManager\\BloodBankManager.csproj|c:\\users\\c-gas\\onedrive\\documentos\\dev\\mentoria\\bloodbankmanager\\bloodbankmanager\\data\\configurations\\donationconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EACF44BE-A301-4001-849F-C7D8A563ACFD}|BloodBankManager\\BloodBankManager.csproj|solutionrelative:bloodbankmanager\\data\\configurations\\donationconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EACF44BE-A301-4001-849F-C7D8A563ACFD}|BloodBankManager\\BloodBankManager.csproj|c:\\users\\c-gas\\onedrive\\documentos\\dev\\mentoria\\bloodbankmanager\\bloodbankmanager\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EACF44BE-A301-4001-849F-C7D8A563ACFD}|BloodBankManager\\BloodBankManager.csproj|solutionrelative:bloodbankmanager\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EACF44BE-A301-4001-849F-C7D8A563ACFD}|BloodBankManager\\BloodBankManager.csproj|c:\\users\\c-gas\\onedrive\\documentos\\dev\\mentoria\\bloodbankmanager\\bloodbankmanager\\data\\configurations\\donorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EACF44BE-A301-4001-849F-C7D8A563ACFD}|BloodBankManager\\BloodBankManager.csproj|solutionrelative:bloodbankmanager\\data\\configurations\\donorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EACF44BE-A301-4001-849F-C7D8A563ACFD}|BloodBankManager\\BloodBankManager.csproj|c:\\users\\c-gas\\onedrive\\documentos\\dev\\mentoria\\bloodbankmanager\\bloodbankmanager\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EACF44BE-A301-4001-849F-C7D8A563ACFD}|BloodBankManager\\BloodBankManager.csproj|solutionrelative:bloodbankmanager\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "BloodBankManager\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "BloodBankManager\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T23:47:42.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "BloodBankManager\\Data\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\ApplicationUser.cs",
+              "RelativeToolTip": "BloodBankManager\\Data\\ApplicationUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T23:47:43.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DonationConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\Configurations\\DonationConfiguration.cs",
+              "RelativeDocumentMoniker": "BloodBankManager\\Data\\Configurations\\DonationConfiguration.cs",
+              "ToolTip": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\Configurations\\DonationConfiguration.cs",
+              "RelativeToolTip": "BloodBankManager\\Data\\Configurations\\DonationConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T23:47:59.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DonorConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\Configurations\\DonorConfiguration.cs",
+              "RelativeDocumentMoniker": "BloodBankManager\\Data\\Configurations\\DonorConfiguration.cs",
+              "ToolTip": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\Configurations\\DonorConfiguration.cs",
+              "RelativeToolTip": "BloodBankManager\\Data\\Configurations\\DonorConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T23:50:58.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20240904235446_initialapp.cs",
+              "DocumentMoniker": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\Migrations\\20240904235446_initialapp.cs",
+              "RelativeDocumentMoniker": "BloodBankManager\\Data\\Migrations\\20240904235446_initialapp.cs",
+              "ToolTip": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\Data\\Migrations\\20240904235446_initialapp.cs",
+              "RelativeToolTip": "BloodBankManager\\Data\\Migrations\\20240904235446_initialapp.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T23:54:47.026Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

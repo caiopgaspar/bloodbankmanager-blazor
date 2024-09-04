@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\c-gas\\OneDrive\\Documentos\\DEV\\mentoria\\BloodBankManager\\BloodBankManager\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BloodBankManager.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BloodBankManager.props",
+      "PackagePath": "build\\BloodBankManager.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BloodBankManager.props",
+      "PackagePath": "buildMultiTargeting\\BloodBankManager.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BloodBankManager.props",
+      "PackagePath": "buildTransitive\\BloodBankManager.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

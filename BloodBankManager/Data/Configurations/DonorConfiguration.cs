@@ -20,10 +20,6 @@ namespace BloodBankManager.Data.Configurations
                 .IsRequired(true)
                 .HasColumnType("VARCHAR(50)");
 
-            builder.Property(d => d.DateOfBirth)
-                .IsRequired(true)
-                .HasColumnType("VARCHAR(50)");
-
             builder.Property(d => d.Gender)
                 .IsRequired(true)
                 .HasColumnType("CHAR(1)");

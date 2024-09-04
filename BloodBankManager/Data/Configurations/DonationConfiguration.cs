@@ -15,14 +15,9 @@ namespace BloodBankManager.Data.Configurations
             builder.Property(x => x.DonorId)
                 .IsRequired();
 
-            builder.Property(x => x.DonationDate)
-                .IsRequired();
-
             builder.Property(x => x.QuantityMl)
                 .IsRequired(true)
                 .HasColumnType("NVARCHAR(5)");
-
-            builder.Property(x => x.Donor);
 
             builder.HasOne(d => d.Donor)
                 .WithMany(x => x.Donations)
