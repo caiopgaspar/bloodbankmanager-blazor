@@ -1,6 +1,8 @@
 using BloodBankManager.Components;
 using BloodBankManager.Components.Account;
 using BloodBankManager.Data;
+using BloodBankManager.Repositories.Donations;
+using BloodBankManager.Repositories.Donors;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +21,10 @@ builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
+
+builder.Services.AddScoped<IDonorRepository, DonorRepository>();
+builder.Services.AddScoped<IDonationRepository, DonationRepository>();
+
 
 builder.Services.AddAuthentication(options =>
     {

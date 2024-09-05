@@ -1,0 +1,69 @@
+﻿@page "/donors/create"
+@inherits CreateDonorPage
+
+<PageTitle>New Donor</PageTitle>
+
+<MudText Typo="Typo.h4">New Donor</MudText>
+
+<MudPaper Class="pa-8 mt-4">
+
+    <EditForm Model="@InputModel" OnValidSubmit="OnValidSubmitAsync">
+        <DataAnnotationsValidator/>
+
+        <MudTextField Label="Full name"
+                      Variant="Variant.Outlined"
+                      HelperText="Required"
+                      @bind-Value="InputModel.FullName"
+                      For="@(()=> InputModel.FullName)" />
+        <MudTextField Label="Email"
+                      Variant="Variant.Outlined"
+                      HelperText="Required"
+                      @bind-Value="InputModel.Email"
+                       />
+        <MudDatePicker Label="Date of birth"
+                      Editable="true"
+                      Variant="Variant.Outlined"
+                      HelperText="Required"
+                      Placeholder="Date of birth"
+                      @bind-Value="InputModel.DateOfBirth"
+                       />
+        <MudTextField Label="Gender (M/F)"
+                      Variant="Variant.Outlined"                      
+                      @bind-Value="InputModel.Gender"
+                       />
+        <MudTextField Label="Weight"
+                      Variant="Variant.Outlined"
+                      HelperText="Required"
+                      @bind-Value="InputModel.Weight"
+                      />
+
+        <MudDivider Class="m-4" />
+
+        <MudTextField Label="Blood ABO Type"
+                      Variant="Variant.Outlined"
+                      HelperText="Required"
+                      @bind-Value="InputModel.BloodAboType"
+                      For="@(()=> InputModel.BloodAboType)" />
+        <MudTextField Label="Rh Factor"
+                      Variant="Variant.Outlined"
+                      HelperText="Required"
+                      @bind-Value="InputModel.RhFactor"
+                      For="@(()=> InputModel.RhFactor)" />
+        <MudTextField Label="Observation"
+                      Variant="Variant.Outlined"
+                      @bind-Value="InputModel.Observation"
+                      For="@(()=> InputModel.Observation)" />
+
+        <MudDivider Class="m-4" />
+
+        <MudButton Variant="Variant.Filled"
+                   StartIcon="@Icons.Material.Filled.Save"
+                   Color="Color.Info"
+                   Size="Size.Large"
+                   ButtonType="ButtonType.Submit"
+        >Save</MudButton>
+
+
+    </EditForm>
+
+</MudPaper>

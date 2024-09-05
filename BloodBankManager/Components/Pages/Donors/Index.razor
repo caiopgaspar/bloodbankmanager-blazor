@@ -1,0 +1,42 @@
+﻿@page "/donors"
+@inherits IndexDonorPage
+
+<PageTitle>Donors</PageTitle>
+
+<MudText Typo="Typo.h3">Donors</MudText>
+
+<MudButton Variant="Variant.Filled" 
+           StartIcon="@Icons.Material.Filled.PersonAdd"
+           Color="Color.Info"
+           Size="Size.Large"
+           Href="/donors/create"
+           Class="mt-md-4 mb-4"
+>New donor</MudButton>
+
+<MudDataGrid Items="@Donors" Filterable="false" SortMode="@SortMode.Single" Groupable="false">
+    <Columns>
+        <PropertyColumn Property="x => x.FullName" />
+        <PropertyColumn Property="x => x.Email" />
+        <PropertyColumn Property="x => x.DateOfBirth" Format="dd/MM/yyyy" />
+        <PropertyColumn Property="x => x.Weight" />
+        <PropertyColumn Property="x => x.BloodAboType" />
+        <PropertyColumn Property="x => x.RhFactor" />
+        <PropertyColumn Property="x => x.Observation" />
+        <TemplateColumn>
+            <CellTemplate>
+                <MudStack Row>
+                    <MudFab Size="Size.Small"
+                            Label="Edit"
+                            @onclick="@(()=> GoToUpdate(context.Item.Id))"
+                            StartIcon="@Icons.Material.Filled.Edit"
+                            Color="Color.Success" />
+                    <MudFab Size="Size.Small"
+                            Label="Delete"
+                            @onclick="@(()=> DeleteDonorAsync(context.Item))"
+                            StartIcon="@Icons.Material.Filled.Delete"
+                            Color="Color.Error" />
+                </MudStack>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>
