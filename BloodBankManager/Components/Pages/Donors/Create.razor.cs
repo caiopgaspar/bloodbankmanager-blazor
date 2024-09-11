@@ -1,4 +1,5 @@
-﻿using BloodBankManager.Models;
+﻿using BloodBankManager.Enums;
+using BloodBankManager.Models;
 using BloodBankManager.Repositories.Donors;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
@@ -19,8 +20,8 @@ namespace BloodBankManager.Components.Pages.Donors
 
         public DonorInputModel InputModel { get; set; } = new();
 
-        public DateTime? DateOfBirth { get; set; } = DateTime.Today;
-
+        public DateTime? DateOfBirth { get; set; } = DateTime.Today.AddYears(-18);
+        public DateTime? MaxDate { get; set; } = DateTime.Today.AddYears(-18);
         public async Task OnValidSubmitAsync(EditContext editContext)
         {
             try
@@ -31,7 +32,7 @@ namespace BloodBankManager.Components.Pages.Donors
                     {
                         FullName = model.FullName,
                         Email = model.Email,
-                        DateOfBirth = DateOfBirth.Value,
+                        DateOfBirth = model.DateOfBirth,
                         Gender = model.Gender,
                         Weight = model.Weight,
                         BloodAboType = model.BloodAboType,

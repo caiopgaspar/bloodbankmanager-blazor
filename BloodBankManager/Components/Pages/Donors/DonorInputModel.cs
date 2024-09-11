@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BloodBankManager.Enums;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
 namespace BloodBankManager.Components.Pages.Donors
 {
@@ -14,19 +16,22 @@ namespace BloodBankManager.Components.Pages.Donors
         [EmailAddress(ErrorMessage = "Invalid email")]
         public string Email { get; set; } = null!;
 
-        [Required(ErrorMessage = "Date of birth required")]
+        [Required]
+        [DataType(DataType.Date, ErrorMessage = "Not a valid date time")]               
         public DateTime DateOfBirth { get; set; }
-                
-        public string Gender { get; set; } = null!;
+
+        public GenderEnum Gender { get; set; }
 
         [Required(ErrorMessage = "Weight required")]
         public double Weight { get; set; }
 
         [Required(ErrorMessage = "Blood ABO type required")]
-        public string BloodAboType { get; set; } = null!;
+        //[RegularExpression("([1-9][0-9]*)", ErrorMessage = "Invalid selected value")]
+        public BloodAboTypeEnum BloodAboType { get; set; }
 
         [Required(ErrorMessage = "Rh Factor required")]
-        public string RhFactor { get; set; } = null!;
+        //[RegularExpression("([1-9][0-9]*)", ErrorMessage = "Invalid selected value")]
+        public RhFactorEnum RhFactor { get; set; } 
 
         public string? Observation { get; set; }
     }

@@ -1,4 +1,5 @@
 ﻿@page "/donors/create"
+@using BloodBankManager.Enums
 @inherits CreateDonorPage
 
 <PageTitle>New Donor</PageTitle>
@@ -13,50 +14,97 @@
         <MudTextField Label="Full name"
                       Variant="Variant.Outlined"
                       HelperText="Required"
+                      HelperTextOnFocus="true"
                       @bind-Value="InputModel.FullName"
-                      For="@(()=> InputModel.FullName)" />
+                      For="@(()=> InputModel.FullName)"
+                      />
         <MudTextField Label="Email"
                       Variant="Variant.Outlined"
                       HelperText="Required"
+                      HelperTextOnFocus="true"
                       @bind-Value="InputModel.Email"
-                       />
+                      />
         <MudDatePicker Label="Date of birth"
-                      Editable="true"
-                      Variant="Variant.Outlined"
-                      HelperText="Required"
-                      Placeholder="Date of birth"
-                      @bind-Value="InputModel.DateOfBirth"
-                       />
-        <MudTextField Label="Gender (M/F)"
-                      Variant="Variant.Outlined"                      
-                      @bind-Value="InputModel.Gender"
-                       />
-        <MudTextField Label="Weight"
-                      Variant="Variant.Outlined"
-                      HelperText="Required"
-                      @bind-Value="InputModel.Weight"
+                       Variant="Variant.Outlined"
+                       Editable="false"
+                       DateFormat="dd/MM/yyyy"
+                       Placeholder="Date of birth"
+                       @bind-Date="DateOfBirth"                       
+                       MaxDate="@MaxDate"
                       />
 
-        <MudDivider Class="m-4" />
+        <MudGrid Class="mt-1 mb-1">
 
-        <MudTextField Label="Blood ABO Type"
-                      Variant="Variant.Outlined"
-                      HelperText="Required"
-                      @bind-Value="InputModel.BloodAboType"
-                      For="@(()=> InputModel.BloodAboType)" />
-        <MudTextField Label="Rh Factor"
-                      Variant="Variant.Outlined"
-                      HelperText="Required"
-                      @bind-Value="InputModel.RhFactor"
-                      For="@(()=> InputModel.RhFactor)" />
+            <MudItem xs="6">
+
+                <MudSelect Label="Gender"
+                   Variant="Variant.Outlined"
+                   AnchorOrigin="Origin.BottomCenter"
+                   @bind-Value="InputModel.Gender"
+                   For="@(() => InputModel.Gender)">
+                   @foreach (var gender in Enum.GetValues<GenderEnum>())
+                   {
+                       <MudSelectItem Value="@gender">@gender.ToString()</MudSelectItem>
+                   }
+                </MudSelect>
+
+            </MudItem>
+
+            <MudItem xs="6">
+                <MudNumericField Label="Weight"
+                   Variant="Variant.Outlined"
+                   Format="N1"
+                   HelperText="Required"
+                   HelperTextOnFocus="true"
+                   @bind-Value="InputModel.Weight" />
+            </MudItem>
+
+        </MudGrid>        
+
+        <MudGrid>
+
+            <MudItem xs="6">
+
+                <MudSelect Label="Blood ABO Type"
+                   Variant="Variant.Outlined"
+                   HelperText="Required"
+                   HelperTextOnFocus="true"
+                   AnchorOrigin="Origin.BottomCenter"
+                   @bind-Value="InputModel.BloodAboType"
+                   For="@(()=> InputModel.BloodAboType)">
+                   @foreach(var bloodAboType in Enum.GetValues<BloodAboTypeEnum>())
+                   {
+                       <MudSelectItem Value="@bloodAboType">@bloodAboType.ToString()</MudSelectItem>
+                   }
+                </MudSelect>
+
+            </MudItem>
+
+            <MudItem xs="6">
+
+                <MudSelect Label="Rh Factor"
+                   Variant="Variant.Outlined"
+                   HelperText="Required"
+                   HelperTextOnFocus="true"
+                   AnchorOrigin="Origin.BottomCenter"
+                   @bind-Value="InputModel.RhFactor"
+                   For="@(()=> InputModel.RhFactor)">
+                   @foreach(var rhFactor in Enum.GetValues<RhFactorEnum>())
+                   {
+                       <MudSelectItem Value="@rhFactor">@rhFactor.ToString()</MudSelectItem>
+                   }
+                </MudSelect>
+
+            </MudItem>
+        </MudGrid>
+
         <MudTextField Label="Observation"
-                      Variant="Variant.Outlined"
-                      @bind-Value="InputModel.Observation"
-                      For="@(()=> InputModel.Observation)" />
+                   Variant="Variant.Outlined"
+                   @bind-Value="InputModel.Observation"
+                   For="@(()=> InputModel.Observation)" />       
 
-        <MudDivider Class="m-4" />
-
-        <MudButton Variant="Variant.Filled"
+        <MudButton Class="mt-5"
+                   Variant="Variant.Filled"
                    StartIcon="@Icons.Material.Filled.Save"
                    Color="Color.Info"
                    Size="Size.Large"

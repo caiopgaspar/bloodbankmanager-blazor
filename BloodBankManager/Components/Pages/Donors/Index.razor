@@ -15,12 +15,13 @@
 
 <MudDataGrid Items="@Donors" Filterable="false" SortMode="@SortMode.Single" Groupable="false">
     <Columns>
-        <PropertyColumn Property="x => x.FullName" />
-        <PropertyColumn Property="x => x.Email" />
-        <PropertyColumn Property="x => x.DateOfBirth" Format="dd/MM/yyyy" />
-        <PropertyColumn Property="x => x.Weight" />
-        <PropertyColumn Property="x => x.BloodAboType" />
-        <PropertyColumn Property="x => x.RhFactor" />
+        <PropertyColumn Property="x => x.FullName" Title="Name"/>
+        <PropertyColumn Property="x => x.Email" Title="E-mail"/>
+        <PropertyColumn Property="x => x.Age" Title="Age"/>
+        <PropertyColumn Property="x => x.Gender"/>
+        <PropertyColumn Property="x => x.Weight" Title="Weight (Kg)" />
+        <PropertyColumn Property="x => x.BloodAboType" Title="ABO Type"/>
+        <PropertyColumn Property="x => x.RhFactor" Title="Rh Factor" />
         <PropertyColumn Property="x => x.Observation" />
         <TemplateColumn>
             <CellTemplate>
