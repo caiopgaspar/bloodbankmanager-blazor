@@ -21,16 +21,16 @@ namespace BloodBankManager.Data.Configurations
                 .HasColumnType("VARCHAR(50)");
 
             builder.Property(d => d.Gender)
-                .IsRequired(true)
-                .HasColumnType("CHAR(1)");
+                .IsRequired(false)
+                .HasColumnType("VARCHAR(11)");
 
             builder.Property(d => d.Weight)
                 .IsRequired(true)
-                .HasColumnType("NVARCHAR(5)");
+                .HasColumnType("FLOAT");
 
             builder.Property(d => d.BloodAboType)
                 .IsRequired(true)
-                .HasColumnType("CHAR(1)");
+                .HasColumnType("VARCHAR(2)");
 
             builder.Property(d => d.RhFactor)
                 .IsRequired(true)
@@ -38,7 +38,7 @@ namespace BloodBankManager.Data.Configurations
 
             builder.Property(d => d.Observation)
                 .IsRequired(false)
-                .HasColumnType("VARCHAR(100)");
+                .HasColumnType("VARCHAR(200)");
 
             builder.HasMany(d => d.Donations)
                 .WithOne(d => d.Donor)
