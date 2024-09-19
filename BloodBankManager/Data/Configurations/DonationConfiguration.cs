@@ -17,10 +17,11 @@ namespace BloodBankManager.Data.Configurations
 
             builder.Property(x => x.QuantityMl)
                 .IsRequired(true)
-                .HasColumnType("NVARCHAR(5)");
+                .HasColumnType("INT");
 
             builder.HasOne(d => d.Donor)
                 .WithMany(x => x.Donations)
+                .HasForeignKey(d => d.DonorId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

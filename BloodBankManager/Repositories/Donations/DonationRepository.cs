@@ -28,6 +28,7 @@ namespace BloodBankManager.Repositories.Donations
         public async Task<List<Donation>> GetAllAsync()
         {
             return await _context.Donations
+                .Include(d => d.Donor)
                 .AsNoTracking().ToListAsync();
         }
 

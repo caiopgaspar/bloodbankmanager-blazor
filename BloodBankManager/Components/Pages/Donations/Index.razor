@@ -1,0 +1,40 @@
+﻿@page "/donations"
+@inherits IndexDonationPage
+
+<PageTitle>Donations</PageTitle>
+
+<MudText Typo="Typo.h3">Donations</MudText>
+
+<MudButton Variant="Variant.Filled" 
+           StartIcon="@Icons.Material.Filled.AddCircle"
+           Color="Color.Info"
+           Size="Size.Large"
+           Href="/donations/create"
+           Class="mt-md-4 mb-4"
+>New donation</MudButton>
+
+<MudDataGrid Items="@Donations" Filterable="false" SortMode="@SortMode.Single" Groupable="false">
+    <Columns>
+        <PropertyColumn Property="x => x.Donor.FullName" Title="Donor" />
+        <PropertyColumn Property="x => x.Donor.BloodAboType" Title="ABO Type" />
+        <PropertyColumn Property="x => x.Donor.RhFactor" Title="Rh Factor" />
+        <PropertyColumn Property="x => x.DonationDate" Title="Date"/>
+        <PropertyColumn Property="x => x.QuantityMl" Title="Quantity (ml)"/>
+        <TemplateColumn>
+            <CellTemplate>
+                <MudStack Row>
+                    <MudFab Size="Size.Small"
+                            Label="Edit"
+                            @onclick="@(()=> GoToUpdate(context.Item.Id))"
+                            StartIcon="@Icons.Material.Filled.Edit"
+                            Color="Color.Success" />
+                    <MudFab Size="Size.Small"
+                            Label="Delete"
+                            @onclick="@(()=> DeleteDonationAsync(context.Item))"
+                            StartIcon="@Icons.Material.Filled.Delete"
+                            Color="Color.Error" />
+                </MudStack>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>

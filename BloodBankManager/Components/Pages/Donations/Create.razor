@@ -1,0 +1,88 @@
+﻿@page "/donations/create"
+@using BloodBankManager.InputModels
+@using BloodBankManager.Models
+@using BloodBankManager.Repositories.Donations
+@using BloodBankManager.Repositories.Donors
+@inherits CreateDonationPage
+
+<PageTitle>New Donation</PageTitle>
+
+<MudText Typo="Typo.h4">New Donation</MudText>
+
+<MudPaper Class="pa-8 mt-4">
+    <EditForm Model="@InputModel" OnValidSubmit="OnValidSubmitAsync">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        
+        <MudGrid>        
+            <MudAutocomplete T="Donor"
+                @bind-Value="InputModel.SelectedDonor"
+                Label="Donor"
+                Variant="Variant.Outlined"
+                ShowProgressIndicator="true" ProgressIndicatorColor="Color.Info"
+                SearchFunc="SearchDonors" ToStringFunc="donor => donor.FullName"
+                Clearable="true" />
+        </MudGrid>
+
+        @if (SelectedDonor != null)
+        {
+            <MudGrid Class="mt-1 mb-1">
+                <MudItem xs="6">
+                    <MudTextField Label="ABO Type"
+                        Value="@SelectedDonor.BloodAboType.ToString()"
+                        Variant="Variant.Outlined"
+                        Disabled="true" />
+                </MudItem>
+                <MudItem xs="6">
+                    <MudTextField Label="Rh Factor"
+                        Value="@SelectedDonor.RhFactor"
+                        Variant="Variant.Outlined"
+                        Disabled="true" />
+                </MudItem>
+            </MudGrid>
+        }
+@*         <MudGrid Class="mt-1 mb-1">
+            <MudItem xs="6">
+                <MudTextField Label="ABO Type"
+                    Value="@SelectedDonor.BloodAboType.ToString()"
+                    Variant="Variant.Outlined"
+                    Disabled="true" />
+            </MudItem>
+            <MudItem xs="6">
+                <MudTextField Label="Rh Factor"
+                    Value="@InputModel.DonorRhFactor"
+                    Variant="Variant.Outlined"
+                    Disabled="true" />
+            </MudItem>
+        </MudGrid> *@
+
+        <MudGrid Class="mt-1 mb-1">
+            
+            <MudItem xs="6">                
+                <MudDatePicker Label="Donation Date"
+                       Variant="Variant.Outlined"
+                       Placeholder="Date"
+                       Editable="false"
+                       DateFormat="dd/MM/yyyy"
+                       @bind-Date="DonationDate" />
+            </MudItem>
+
+            <MudItem xs="6">                       
+                <MudNumericField Label="Quantity (ml)"
+                       Variant="Variant.Outlined"
+                       Adornment="Adornment.End" AdornmentText="ml" AdornmentColor="Color.Inherit"
+                       @bind-Value="InputModel.QuantityML"
+                       Required="true" />
+            </MudItem>
+
+        </MudGrid>
+
+        <MudButton Class="mt-5"
+                   Variant="Variant.Filled"
+                   StartIcon="@Icons.Material.Filled.Save"
+                   Color="Color.Info"
+                   Size="Size.Large"
+                   ButtonType="ButtonType.Submit">Save</MudButton>
+
+    </EditForm>
+</MudPaper>

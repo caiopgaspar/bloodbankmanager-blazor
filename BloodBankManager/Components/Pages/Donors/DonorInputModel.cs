@@ -1,6 +1,5 @@
 ﻿using BloodBankManager.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
 
 namespace BloodBankManager.Components.Pages.Donors
 {
@@ -22,15 +21,15 @@ namespace BloodBankManager.Components.Pages.Donors
 
         public GenderEnum Gender { get; set; }
 
-        [Required(ErrorMessage = "Weight required")]
+        [Required(ErrorMessage = "Weight is required")]
+        [Range(50, double.MaxValue, ErrorMessage = "Weight must be at least 50 kg")]
         public double Weight { get; set; }
 
-        [Required(ErrorMessage = "Blood ABO type required")]
-        //[RegularExpression("([1-9][0-9]*)", ErrorMessage = "Invalid selected value")]
+
+        [Required(ErrorMessage = "Blood ABO type required")]        
         public BloodAboTypeEnum BloodAboType { get; set; }
 
-        [Required(ErrorMessage = "Rh Factor required")]
-        //[RegularExpression("([1-9][0-9]*)", ErrorMessage = "Invalid selected value")]
+        [Required(ErrorMessage = "Rh Factor required")]        
         public RhFactorEnum RhFactor { get; set; } 
 
         public string? Observation { get; set; }
