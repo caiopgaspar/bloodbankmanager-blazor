@@ -14,11 +14,11 @@ namespace BloodBankManager.Data.Configurations
 
             builder.Property(b => b.BloodAboType)
                 .IsRequired()
-                .HasColumnType("CHAR(1)");
+                .HasColumnType("VARCHAR(2)");
 
             builder.Property(b => b.RhFactor)
                 .IsRequired()
-                .HasColumnType("CHAR(1)");
+                .HasColumnType("VARCHAR(8)");
 
             builder.Property(b => b.QuantityMl)
                 .IsRequired()

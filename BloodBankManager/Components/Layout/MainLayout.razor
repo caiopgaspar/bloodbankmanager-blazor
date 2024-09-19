@@ -1,13 +1,13 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider Theme="MyCustomTheme"/>
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 <MudLayout>
     <MudAppBar Elevation="1">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudText Typo="Typo.h5" Class="ml-3">Application</MudText>
+        <MudText Typo="Typo.h5" Class="ml-3">Blood Bank Manager</MudText>
         <MudSpacer />
         <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
     </MudAppBar>
@@ -18,6 +18,7 @@
         @Body
     </MudMainContent>
 </MudLayout>
+
 
 
 <div id="blazor-error-ui">
@@ -34,6 +35,38 @@
         _drawerOpen = !_drawerOpen;
     }
 
-}
+    MudTheme MyCustomTheme = new MudTheme()
+        {
+            PaletteLight = new PaletteLight()
+            {
+                Primary = Colors.Teal.Darken3,
+                Secondary = Colors.Green.Accent4,
+                AppbarBackground = Colors.Teal.Lighten1,
+                Background = Colors.Teal.Lighten5,
+                Info = Colors.Cyan.Darken2,
+                DrawerIcon = Colors.Teal.Darken4
 
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = Colors.Blue.Lighten1
+            },
+
+            LayoutProperties = new LayoutProperties()
+            {
+                DrawerWidthLeft = "260px",
+                DrawerWidthRight = "300px"
+            },
+
+            Typography = new Typography()
+            {
+                Default = new Default()
+                {
+                    FontFamily = new[] { "Roboto", "Arial", "sans-serif" }
+                }
+            }
+            
+        };
+
+}
 
