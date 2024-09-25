@@ -150,3 +150,4 @@ C:\Users\c-gas\OneDrive\Documentos\DEV\mentoria\BloodBankManager\BloodBankManage
 C:\Users\c-gas\OneDrive\Documentos\DEV\mentoria\BloodBankManager\BloodBankManager\obj\Debug\net8.0\BloodBankManager.pdb
 C:\Users\c-gas\OneDrive\Documentos\DEV\mentoria\BloodBankManager\BloodBankManager\obj\Debug\net8.0\BloodBankManager.genruntimeconfig.cache
 C:\Users\c-gas\OneDrive\Documentos\DEV\mentoria\BloodBankManager\BloodBankManager\obj\Debug\net8.0\ref\BloodBankManager.dll
+C:\Users\c-gas\OneDrive\Documentos\DEV\mentoria\BloodBankManager\BloodBankManager\obj\Debug\net8.0\BloodBankManager.sourcelink.json

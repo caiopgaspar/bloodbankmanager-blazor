@@ -1,5 +1,6 @@
 ﻿using BloodBankManager.Data;
 using BloodBankManager.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BloodBankManager.Repositories.BloodStock
 {
@@ -17,15 +18,9 @@ namespace BloodBankManager.Repositories.BloodStock
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<IEnumerable<Models.BloodStock>> GetAllAsync()
         {
-            var bloodStock = await GetByIdAsync(id);
-            _context.BloodStocks.Remove(bloodStock);
-        }
-
-        public Task<IEnumerable<Models.BloodStock>> GetAllAsync()
-        {
-            throw new NotImplementedException();
+            return await _context.BloodStocks.ToListAsync();
         }
 
         public Task<Models.BloodStock> GetByBloodTypeAndRhFactorAsync(string bloodType, string rhFactor)
@@ -33,14 +28,22 @@ namespace BloodBankManager.Repositories.BloodStock
             throw new NotImplementedException();
         }
 
-        public Task<Models.BloodStock> GetByIdAsync(int id)
+        public async Task UpdateAsync(Donation donation)
         {
-            throw new NotImplementedException();
-        }
+            var bloodStock = await _context.BloodStocks
+                .SingleOrDefaultAsync(b => b.BloodAboType == donation.Donor.BloodAboType
+                                        && b.RhFactor == donation.Donor.RhFactor);
 
-        public Task UpdateAsync(Models.BloodStock bloodStock)
-        {
-            throw new NotImplementedException();
+            if (bloodStock != null)
+            {
+                bloodStock.QuantityMl += donation.QuantityMl;
+                _context.BloodStocks.Update(bloodStock);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new Exception("Blood stock record not found for the given blood Abo type and Rh factor.");             
+            }
         }
     }
 }

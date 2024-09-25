@@ -1,6 +1,7 @@
 using BloodBankManager.Components;
 using BloodBankManager.Components.Account;
 using BloodBankManager.Data;
+using BloodBankManager.Repositories.BloodStock;
 using BloodBankManager.Repositories.Donations;
 using BloodBankManager.Repositories.Donors;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -24,6 +25,7 @@ builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuth
 
 builder.Services.AddScoped<IDonorRepository, DonorRepository>();
 builder.Services.AddScoped<IDonationRepository, DonationRepository>();
+builder.Services.AddScoped<IBloodStockRepository, BloodStockRepository>();
 
 
 builder.Services.AddAuthentication(options =>

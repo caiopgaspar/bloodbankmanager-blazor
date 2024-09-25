@@ -189,8 +189,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/c-gas/OneDrive/Documentos/DEV/mentoria/BloodBankManager/BloodBankManager/Components/Pages/BloodStock/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCbG9vZFN0b2NrXEluZGV4LnJhem9y
+[C:/Users/c-gas/OneDrive/Documentos/DEV/mentoria/BloodBankManager/BloodBankManager/Components/Pages/BloodStocks/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCbG9vZFN0b2Nrc1xJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/c-gas/OneDrive/Documentos/DEV/mentoria/BloodBankManager/BloodBankManager/Components/Pages/Donations/Create.razor]

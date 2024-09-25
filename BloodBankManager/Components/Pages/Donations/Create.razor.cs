@@ -18,6 +18,9 @@ namespace BloodBankManager.Components.Pages.Donations
         public IDonorRepository donorRepository { get; set; }
 
         [Inject]
+        public IBloodStockRepository bloodStockRepository { get; set; }
+
+        [Inject]
         public NavigationManager Navigation { get; set; }
 
         [Inject]
@@ -41,17 +44,29 @@ namespace BloodBankManager.Components.Pages.Donations
         {
             try
             {
-                if (editContext.Model is DonationInputModel model)
+                if (editContext.Model is DonationInputModel model && InputModel.SelectedDonor != null)
                 {
+                    var donor = await donorRepository.GetByIdAsync(InputModel.SelectedDonor.Id);
+                    if (donor == null)
+                    {
+                        Snackbar.Add("Donor not found.", Severity.Error);
+                        return;
+                    }
+
                     var donation = new Donation
                     {
                         DonorId = InputModel.SelectedDonor.Id,
-                        DonationDate = InputModel.DonationDate,
-                        QuantityMl = InputModel.QuantityML
+                        DonationDate = InputModel.DonationDate.Value,
+                        QuantityMl = InputModel.QuantityML,
+                        Donor = donor
                     };
 
                     await repository.AddAsync(donation);
-                    Snackbar.Add("Donation created successfully!", Severity.Success);
+
+                    await bloodStockRepository.UpdateAsync(donation);
+
+                    Snackbar.Add("Donation created and blood stock updated successfully!", Severity.Success);
+                    await Task.Delay(500);
                     Navigation.NavigateTo("/donations");
                 }
 
@@ -63,14 +78,10 @@ namespace BloodBankManager.Components.Pages.Donations
             }
         }
 
-        public void OnDonorSelected(int donorId)
+        public void OnDonorSelected(Donor selectedDonor)
         {            
-            SelectedDonor = Donors.SingleOrDefault(d => d.Id == donorId);
-
-            if (SelectedDonor != null)
-            {
-                InputModel.SelectedDonor.Id = SelectedDonor.Id;
-            }
+            SelectedDonor = selectedDonor;
+            InputModel.SelectedDonor = selectedDonor;
         }
 
         public async Task<IEnumerable<Donor>> SearchDonors(string value, CancellationToken token)

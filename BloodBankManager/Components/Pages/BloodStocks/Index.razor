@@ -1,0 +1,26 @@
+﻿@page "/bloodstock"
+@inherits IndexBloodStockPage
+
+<PageTitle>Blood Stock</PageTitle>
+
+<MudText Typo="Typo.h3">Blood Stock</MudText>
+
+@if (BloodStock != null)
+{
+    <MudTable Items="BloodStock">
+        <HeaderContent>
+            <MudTh>Blood Type</MudTh>
+            <MudTh>Rh Factor</MudTh>
+            <MudTh>Quantity (ml)</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd>@context.BloodAboType.ToString()</MudTd>
+            <MudTd>@context.RhFactor.ToString()</MudTd>
+            <MudTd>@context.QuantityMl</MudTd>
+        </RowTemplate>
+    </MudTable>
+}
+else
+{
+    <MudText Typo="Typo.body1">Loading blood stocks...</MudText>
+}

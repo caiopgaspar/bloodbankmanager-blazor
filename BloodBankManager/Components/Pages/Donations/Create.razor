@@ -16,7 +16,8 @@
         
         <MudGrid>        
             <MudAutocomplete T="Donor"
-                @bind-Value="InputModel.SelectedDonor"
+                Value="InputModel.SelectedDonor"
+                ValueChanged="OnDonorSelected"
                 Label="Donor"
                 Variant="Variant.Outlined"
                 ShowProgressIndicator="true" ProgressIndicatorColor="Color.Info"
@@ -41,20 +42,6 @@
                 </MudItem>
             </MudGrid>
         }
-@*         <MudGrid Class="mt-1 mb-1">
-            <MudItem xs="6">
-                <MudTextField Label="ABO Type"
-                    Value="@SelectedDonor.BloodAboType.ToString()"
-                    Variant="Variant.Outlined"
-                    Disabled="true" />
-            </MudItem>
-            <MudItem xs="6">
-                <MudTextField Label="Rh Factor"
-                    Value="@InputModel.DonorRhFactor"
-                    Variant="Variant.Outlined"
-                    Disabled="true" />
-            </MudItem>
-        </MudGrid> *@
 
         <MudGrid Class="mt-1 mb-1">
             
@@ -64,7 +51,7 @@
                        Placeholder="Date"
                        Editable="false"
                        DateFormat="dd/MM/yyyy"
-                       @bind-Date="DonationDate" />
+                       @bind-Date="InputModel.DonationDate" />
             </MudItem>
 
             <MudItem xs="6">                       

@@ -4,6 +4,7 @@ using BloodBankManager.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BloodBankManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240920001328_UpdateBloodStockConfiguration")]
+    partial class UpdateBloodStockConfiguration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,64 +121,6 @@ namespace BloodBankManager.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BloodStock", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BloodAboType = "A",
-                            QuantityMl = 0,
-                            RhFactor = "positive"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BloodAboType = "A",
-                            QuantityMl = 0,
-                            RhFactor = "negative"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BloodAboType = "B",
-                            QuantityMl = 0,
-                            RhFactor = "positive"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            BloodAboType = "B",
-                            QuantityMl = 0,
-                            RhFactor = "negative"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            BloodAboType = "AB",
-                            QuantityMl = 0,
-                            RhFactor = "positive"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            BloodAboType = "AB",
-                            QuantityMl = 0,
-                            RhFactor = "negative"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            BloodAboType = "O",
-                            QuantityMl = 0,
-                            RhFactor = "positive"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            BloodAboType = "O",
-                            QuantityMl = 0,
-                            RhFactor = "negative"
-                        });
                 });
 
             modelBuilder.Entity("BloodBankManager.Models.Donation", b =>
@@ -406,15 +351,15 @@ namespace BloodBankManager.Migrations
                         {
                             Id = "0001-1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bd79ae63-25c5-4561-8067-79ccd2ba9830",
+                            ConcurrencyStamp = "2906751c-ec7f-44da-94ec-c46f81f36e2f",
                             Email = "admin@bloodbankmanager.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@BLOODBANKMANAGER.COM",
                             NormalizedUserName = "ADMIN@BLOODBANKMANAGER.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGnviSZZQWJ/cqAEbSRFeL0v6OPp7btIVreGYiuxvg2xmiLroaivNLW/iW0HpEBApw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJYLmMDzqhS1PwPRwlHfGpYsV/GuxHrdWCYr5zUXs6Aj3kWu46NKF+O2kzHJJB64NA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "adf4647c-76f9-433a-81d4-878a8856b788",
+                            SecurityStamp = "4d13f387-bd8a-4491-9834-30b072ea2d6f",
                             TwoFactorEnabled = false,
                             UserName = "admin@bloodbankmanager.com",
                             Name = "Admin"

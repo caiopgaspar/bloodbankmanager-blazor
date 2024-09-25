@@ -37,7 +37,7 @@ namespace BloodBankManager.Components.Pages.Donations
                 if (result is true)
                 {
                     await repository.DeleteByIdAsync(donation.Id);
-                    Snackbar.Add($"Donor {donation.Donor.FullName} deleted!", Severity.Success);
+                    Snackbar.Add($"Donation of {donation.Donor.FullName} deleted!", Severity.Success);
                     await OnInitializedAsync();
                 }
             }

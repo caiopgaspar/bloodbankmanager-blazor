@@ -22,7 +22,7 @@ namespace BloodBankManager.Data.Configurations
 
             builder.Property(b => b.QuantityMl)
                 .IsRequired()
-                .HasColumnType("NVARCHAR(10)");
+                .HasColumnType("INT");
         }
     }
 }

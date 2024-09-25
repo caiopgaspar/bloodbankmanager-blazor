@@ -1,4 +1,5 @@
-﻿using BloodBankManager.Models;
+﻿using BloodBankManager.Enums;
+using BloodBankManager.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -47,6 +48,18 @@ namespace BloodBankManager.Data
                     RoleId = "0001",
                     UserId = "0001-1"
                 }
+            );
+
+            _modelBuilder.Entity<BloodStock>().HasData
+            (
+                new BloodStock { Id = 1, BloodAboType = BloodAboTypeEnum.A, RhFactor = RhFactorEnum.positive, QuantityMl = 0 },
+                new BloodStock { Id = 2, BloodAboType = BloodAboTypeEnum.A, RhFactor = RhFactorEnum.negative, QuantityMl = 0 },
+                new BloodStock { Id = 3, BloodAboType = BloodAboTypeEnum.B, RhFactor = RhFactorEnum.positive, QuantityMl = 0 },
+                new BloodStock { Id = 4, BloodAboType = BloodAboTypeEnum.B, RhFactor = RhFactorEnum.negative, QuantityMl = 0 },
+                new BloodStock { Id = 5, BloodAboType = BloodAboTypeEnum.AB, RhFactor = RhFactorEnum.positive, QuantityMl = 0 },
+                new BloodStock { Id = 6, BloodAboType = BloodAboTypeEnum.AB, RhFactor = RhFactorEnum.negative, QuantityMl = 0 },
+                new BloodStock { Id = 7, BloodAboType = BloodAboTypeEnum.O, RhFactor = RhFactorEnum.positive, QuantityMl = 0 },
+                new BloodStock { Id = 8, BloodAboType = BloodAboTypeEnum.O, RhFactor = RhFactorEnum.negative, QuantityMl = 0 }
             );
         }
     }
