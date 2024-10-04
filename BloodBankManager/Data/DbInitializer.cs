@@ -34,9 +34,9 @@ namespace BloodBankManager.Data
                     Id = "0001-1",
                     Name = "Admin",
                     Email = "admin@bloodbankmanager.com",
-                    UserName = "admin@bloodbankmanager.com",
+                    UserName = "admin",
                     NormalizedEmail = "ADMIN@BLOODBANKMANAGER.COM",
-                    NormalizedUserName = "ADMIN@BLOODBANKMANAGER.COM",
+                    NormalizedUserName = "ADMIN",
                     PasswordHash = hasher.HashPassword(null, "12345678")
                 }
             );

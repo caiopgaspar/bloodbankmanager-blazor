@@ -1,6 +1,7 @@
 ﻿using BloodBankManager.Models;
 using BloodBankManager.Repositories.Donors;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using MudBlazor;
 
 namespace BloodBankManager.Components.Pages.Donors
@@ -46,6 +47,11 @@ namespace BloodBankManager.Components.Pages.Donors
             }
         }
 
+        public bool HideButtons { get; set; }
+
+        [CascadingParameter]
+        private Task<AuthenticationState> AuthenticationState { get; set; }
+
         public void GoToUpdate(int id)
         {
             Navigation.NavigateTo($"/donors/update/{id}");
@@ -53,6 +59,10 @@ namespace BloodBankManager.Components.Pages.Donors
 
         protected override async Task OnInitializedAsync()
         {
+            var auth = await AuthenticationState;
+
+            HideButtons = !auth.User.IsInRole("User");
+
             Donors = await repository.GetAllAsync();
         }
     }

@@ -1,9 +1,10 @@
 ﻿@page "/bloodstock"
 @inherits IndexBloodStockPage
+@inject IBloodStockRepository repository
 
 <PageTitle>Blood Stock</PageTitle>
 
-<MudText Typo="Typo.h3">Blood Stock</MudText>
+<MudText Typo="Typo.h3" Class="d-flex justify-center mt-3 mb-4">Blood Stock</MudText>
 
 @if (BloodStock != null)
 {
@@ -24,3 +25,16 @@ else
 {
     <MudText Typo="Typo.body1">Loading blood stocks...</MudText>
 }
+
+
+
+
+<MudPaper Class="pa-6 mt-7 " Outlined="true" Square="true">
+    <MudText Typo="Typo.h5" Class="d-flex justify-center mt-3 mb-2">Stock occupation (%)</MudText>
+    <MudItem Class="pl-20 pr-0">
+        <MudChart ChartOptions="Options"
+            XAxisLabels="XAxisLabels"
+            ChartSeries="@Series"
+            ChartType="ChartType.Bar" />
+    </MudItem>
+</MudPaper>

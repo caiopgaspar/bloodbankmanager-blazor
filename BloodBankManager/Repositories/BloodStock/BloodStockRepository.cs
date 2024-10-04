@@ -28,6 +28,7 @@ namespace BloodBankManager.Repositories.BloodStock
             throw new NotImplementedException();
         }
 
+
         public async Task UpdateAsync(Donation donation)
         {
             var bloodStock = await _context.BloodStocks
@@ -45,5 +46,13 @@ namespace BloodBankManager.Repositories.BloodStock
                 throw new Exception("Blood stock record not found for the given blood Abo type and Rh factor.");             
             }
         }
+
+        public async Task<List<StockStatus>> GetStatusAsync()
+        {
+            var result = _context.Database.SqlQuery<StockStatus>
+                ($"SELECT Id, BloodAboType, RhFactor, QuantityMl AS Quantity, 3000 AS Capacity FROM BloodStock ORDER BY Id;"
+                );
+            return await Task.FromResult( result.ToList() );
+        }//continuar video Gráfico de Barras 10:47
     }
 }

@@ -1,6 +1,9 @@
 ﻿@page "/donors/create"
 @using BloodBankManager.Enums
+@using Microsoft.AspNetCore.Authorization
 @inherits CreateDonorPage
+
+@attribute [Authorize(Roles = "User")]
 
 <PageTitle>New Donor</PageTitle>
 

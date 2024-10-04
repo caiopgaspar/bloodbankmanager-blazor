@@ -1,0 +1,6 @@
+﻿@page "/donors/update/{DonorId:int}"
+@using Microsoft.AspNetCore.Authorization
+@inherits UpdateDonorPage
+
+@attribute [Authorize(Roles = "User")]
+
